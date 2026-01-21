@@ -1,0 +1,15 @@
+__pycache__/
+*.pyc
+*.pkl
+*.pt
+*.pth
+data/
+*.log
+*.csv
+*.json
+*.jsonl
+*.jsonl.gz
+*.jsonl.gz.part
+*.jsonl.gz.part.
+.DS_Store
+.vscode/
