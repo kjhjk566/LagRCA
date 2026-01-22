@@ -6,6 +6,14 @@ The repository is organized as follows:
 
 ```
 LagRCA/
+├── config.py         # Bridging the Delay: Lag-Aware Spatio-Temporal Causal Inference for Microservice Root Cause Analysis
+
+## 📂 Project Structure
+
+The repository is organized as follows:
+
+```
+LagRCA/
 ├── config.py               # Configuration settings and dataset mappings
 ├── main.py                 # Entry point for training and evaluation
 ├── model/                  # Core model definitions
@@ -50,12 +58,12 @@ The preprocessed dataset contains the following files:
 
 ## 🛠️ Requirements
 
-- Python 3.8+
-- PyTorch >= 1.8
+- Python 3.9+
+- PyTorch >= 2.1
 - PyTorch Geometric
 - Pandas
 - NumPy
-- Tqdm
+- scikit-learn
 
 
 ## 🚀 Usage
@@ -72,6 +80,26 @@ python main.py --dataset D1
 ```
 
 #### Full Command with Arguments:
+```bash
+python main.py \
+  --dataset D1 \
+  --epochs 100 \
+  --batch_size 16 \
+  --lr 0.001 \
+  --window_size 10 \
+  --stride 1
+```
+
+### Arguments:
+- `--dataset`: Dataset name (`D1`, `D2`). Default: `D1`.
+- `--epochs`: Number of training epochs. Default: `100`.
+- `--batch_size`: Batch size for training. Default: `16`.
+- `--lr`: Learning rate. Default: `0.001`.
+- `--window_size`: Size of the sliding time window. Default: `10`.
+- `--stride`: Step size for the sliding window. Default: `1`.
+
+
+
 ```bash
 python main.py \
   --dataset D1 \
