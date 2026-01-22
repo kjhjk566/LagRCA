@@ -6,14 +6,6 @@ The repository is organized as follows:
 
 ```
 LagRCA/
-├── config.py         # Bridging the Delay: Lag-Aware Spatio-Temporal Causal Inference for Microservice Root Cause Analysis
-
-## 📂 Project Structure
-
-The repository is organized as follows:
-
-```
-LagRCA/
 ├── config.py               # Configuration settings and dataset mappings
 ├── main.py                 # Entry point for training and evaluation
 ├── model/                  # Core model definitions
@@ -41,7 +33,7 @@ Each collected record is annotated with the corresponding root-cause instances a
 
 D2 is built on Online Boutique, a widely used open-source microservice benchmark deployed on a Kubernetes cluster. It contains 41 microservice instances and represents a standard cloud-native architecture. To obtain precise ground truth and controlled failure scenarios, we inject faults spanning the entire stack, comprehensively covering infrastructure-level issues (Network, Storage, Resource Stress, and Pod Lifecycle) as well as application-level anomalies (JVM Runtime and Application Logic errors).
 
-We have preprocessed two raw datasets and placed them in the following folder.
+We have preprocessed two datasets and placed them in the following folder.
 
 D1: LagRCA/data/D1
 
@@ -63,7 +55,8 @@ The preprocessed dataset contains the following files:
 - PyTorch Geometric
 - Pandas
 - NumPy
-- scikit-learn
+- Tqdm
+- Scikit-learn
 
 
 ## 🚀 Usage
@@ -80,26 +73,6 @@ python main.py --dataset D1
 ```
 
 #### Full Command with Arguments:
-```bash
-python main.py \
-  --dataset D1 \
-  --epochs 100 \
-  --batch_size 16 \
-  --lr 0.001 \
-  --window_size 10 \
-  --stride 1
-```
-
-### Arguments:
-- `--dataset`: Dataset name (`D1`, `D2`). Default: `D1`.
-- `--epochs`: Number of training epochs. Default: `100`.
-- `--batch_size`: Batch size for training. Default: `16`.
-- `--lr`: Learning rate. Default: `0.001`.
-- `--window_size`: Size of the sliding time window. Default: `10`.
-- `--stride`: Step size for the sliding window. Default: `1`.
-
-
-
 ```bash
 python main.py \
   --dataset D1 \
